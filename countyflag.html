@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+    var xml = new XMLHttpRequest()
+
+    xml.open("GET", "https://restcountries.com/v3.1/all" )
+
+    xml.send()
+
+    xml.onload = function(){
+        var countyDetails = JSON.parse(xml.responseText)
+
+        console.log(countyDetails)
+        
+        for(i=0;i<countyDetails.length; i++){
+        
+        console.log(countyDetails[i].flag)
+        
+
+    }
+
+
+
+    }
+    
+
+
+
+
+    </script>
+</body>
+</html>
